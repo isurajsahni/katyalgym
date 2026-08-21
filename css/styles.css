@@ -633,24 +633,25 @@ img.watermark--footer {
   min-height: 44px;
 }
 
-.plan__price {
-  display: flex;
-  align-items: flex-start;
-  font-family: var(--font-display);
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--yellow);
+/* Rates are not published, so the price slot carries the phone number instead. */
+.plan__enquire {
   margin: 0;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  color: var(--yellow);
 }
-.plan__cur { font-size: 30px; margin-top: 6px; margin-right: 2px; }
-.plan__per {
-  align-self: flex-end;
-  margin-left: 5px;
-  margin-bottom: 7px;
+.plan__enquire a { color: inherit; transition: color .25s var(--ease); }
+.plan__enquire a:hover { color: var(--white); }
+.plan__enquire span {
+  display: block;
+  margin-top: 7px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 400;
+  letter-spacing: 0;
   color: var(--muted);
 }
 
@@ -792,6 +793,31 @@ img.watermark--footer {
   border: 2px solid var(--yellow);
 }
 .rcard__name { font-size: 14px; font-weight: 600; letter-spacing: .03em; }
+
+/* Aggregate Google rating, shown in place of invented testimonials. */
+.rating { text-align: center; }
+.rating .stars { font-size: 26px; letter-spacing: 6px; margin: 0 0 14px; }
+.stars__part { opacity: .38; }
+.rating__score {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.rating__score strong { color: var(--yellow); font-weight: 700; }
+.rating__meta { color: var(--muted); font-size: 14px; font-weight: 300; margin-bottom: 22px; }
+
+.reviews__cta {
+  margin: 34px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 300;
+}
+.reviews__cta a { color: var(--yellow); }
+.reviews__cta a:hover { color: var(--white); }
 
 .dots { display: flex; justify-content: center; gap: 10px; margin-top: 46px; }
 .dots button {

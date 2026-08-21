@@ -180,62 +180,8 @@
     render();
   }
 
-  /* --------------------------------------------------------------- reviews */
-  var reviewPages = [
-    [
-      { text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.', name: 'Amit Kumar',   img: 'images/avatar-1.jpg' },
-      { text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.', name: 'Neha Sharma',  img: 'images/avatar-2.jpg' },
-      { text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.', name: 'Rahul Verma',  img: 'images/avatar-3.jpg' }
-    ],
-    [
-      { text: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged over all of that time.',           name: 'Priya Singh',  img: 'images/avatar-2.jpg' },
-      { text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.',                    name: 'Karan Mehta',  img: 'images/avatar-3.jpg' },
-      { text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some injected form.',                        name: 'Sana Kapoor',  img: 'images/avatar-1.jpg' }
-    ],
-    [
-      { text: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator.',                     name: 'Vikram Rao',   img: 'images/avatar-3.jpg' },
-      { text: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested in the history of the passage.',                          name: 'Divya Nair',   img: 'images/avatar-1.jpg' },
-      { text: 'Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum are also reproduced in their exact original form, accompanied by translations.',          name: 'Arjun Bhatt',  img: 'images/avatar-2.jpg' }
-    ]
-  ];
-
-  var grid = $('#reviewsGrid');
-  var dots = $('#reviewDots');
-
-  if (grid && dots) {
-    var cardsR   = $$('.rcard', grid);
-    var dotBtns  = $$('button', dots);
-
-    var showPage = function (page) {
-      var data = reviewPages[page];
-      if (!data) return;
-
-      cardsR.forEach(function (card, i) {
-        var d = data[i];
-        if (!d) { card.style.display = 'none'; return; }
-        card.style.display = '';
-        $('p', card).textContent = d.text;
-        $('.rcard__name', card).textContent = d.name;
-        var img = $('.avatar img', card);
-        if (img && img.getAttribute('src') !== d.img) {
-          img.classList.remove('is-broken');
-          img.src = d.img;
-        }
-        card.style.animation = 'none';
-        /* force reflow so the fade restarts */
-        void card.offsetWidth;
-        card.style.animation = '';
-        card.classList.remove('is-visible');
-        requestAnimationFrame(function () { card.classList.add('is-visible'); });
-      });
-
-      dotBtns.forEach(function (b, i) { b.classList.toggle('is-active', i === page); });
-    };
-
-    dotBtns.forEach(function (b, i) {
-      b.addEventListener('click', function () { showPage(i); });
-    });
-  }
+  /* Reviews are shown as an aggregate Google rating in the markup; there is no
+     testimonial carousel to drive until real review text is added. */
 
   /* -------------------------------------------------------------- newsletter */
   var form = $('#newsForm');
