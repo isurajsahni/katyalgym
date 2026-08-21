@@ -128,10 +128,16 @@ Editing `--yellow` or `--red` re-skins the site.
 | `promo-bg.png` | Summer promo banner background |
 | `gallery-1.png`, `gallery-2.png` | Gallery large images |
 | `gallery-thumb-1/2/3.png` | Gallery thumbnail row |
-| `avatar-1/2/3.jpg` | Testimonial avatars |
+| `avatar-1/2/3.jpg` | Testimonial avatars (currently unused — see Reviews) |
 
-The carousel has exactly four cards because the file contains exactly four
-service images.
+One image is **not** from Figma: `images/service-spa.jpg`, backing the Body Spa
+card, is an Unsplash stock photo (a massage shot, portrait so it crops cleanly
+into the card). The file shipped no spa image. Swap in a photo of the actual spa
+room under the same filename and nothing else needs editing — there is a comment
+marking it in `index.html`.
+
+The carousel has five cards: four whose photos came from the Figma file, plus
+Body Spa.
 
 `features-athletes.png` is a transparent cut-out, so it uses `object-fit: contain`
 (not `cover`, which would crop a figure) with no backdrop behind it.
