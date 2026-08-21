@@ -186,6 +186,11 @@ has to work with, so the pin lands on the road rather than the door.
 
 The grid is `repeat(2, 1fr)`, collapsing to one column under 900px.
 
+**One membership covers both branches** — confirmed by the owner, and stated in
+four places since it is a real selling point: the plan feature lists, the note
+under the pricing grid, the "Two Branches, One Membership" feature card, and the
+lede above the maps.
+
 The maps are plain `maps.google.com/maps?q=…&output=embed` iframes, which need no
 API key and no billing account. The address goes in as a readable query string,
 so editing it for a new branch is a copy-paste. They are `loading="lazy"`, so

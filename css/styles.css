@@ -689,12 +689,16 @@ img.watermark--footer {
 
 .plans__note {
   margin: 34px auto 0;
-  max-width: 560px;
+  max-width: 620px;
   text-align: center;
   color: var(--muted);
   font-size: 13px;
   font-weight: 300;
+  line-height: 1.7;
 }
+.plans__note strong { color: var(--white); font-weight: 600; }
+.plans__note a { color: var(--yellow); }
+.plans__note a:hover { color: var(--white); }
 
 /* --------------------------------- Promo --------------------------------- */
 .promo {
@@ -837,6 +841,14 @@ img.watermark--footer {
 
 /* -------------------------------- Locations ------------------------------ */
 .locations { background: var(--bg-alt); }
+
+.locations__lede {
+  max-width: 480px;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 300;
+}
 
 /* Two branches side by side, one row. Collapses to a single column at 900px. */
 .locations__grid {
