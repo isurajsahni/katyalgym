@@ -134,14 +134,10 @@
     var originals = $$('.scard', track);
     var count = originals.length;
 
-    /* The set is cloned once and appended, so the track can always keep moving
-       forward. Landing on the first clone is visually identical to landing on
-       the real first card, which is what makes the wrap invisible: we snap the
-       track back with the transition switched off and nobody sees the seam. */
     if (count > 1) {
       originals.forEach(function (card) {
         var clone = card.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');   /* duplicates, not content */
+        clone.setAttribute('aria-hidden', 'true');
         clone.classList.add('is-clone');
         track.appendChild(clone);
       });
@@ -151,6 +147,10 @@
     var index = 0;
     var animating = false;
     var releaseTimer;
+    var dragging = false;
+    var dragStartX = 0;
+    var dragCurrentX = 0;
+    var dragStartOffset = 0;
 
     var step = function () {
       if (cards.length < 2) return cards.length ? cards[0].offsetWidth : 0;
@@ -161,17 +161,14 @@
       track.style.transform = 'translateX(' + (-index * step()) + 'px)';
     };
 
-    /* Reposition with the transition suppressed, so the wrap is not visible. */
     var jumpTo = function (i) {
       track.style.transition = 'none';
       index = i;
       apply();
-      void track.offsetWidth;            /* force reflow before restoring */
+      void track.offsetWidth;
       track.style.transition = '';
     };
 
-    /* Runs when a slide finishes — also on a timer, so a transitionend that
-       never fires (reduced motion, a backgrounded tab) cannot wedge it. */
     var settle = function () {
       clearTimeout(releaseTimer);
       animating = false;
@@ -183,8 +180,6 @@
       if (animating || count < 2) return;
       animating = true;
       releaseTimer = setTimeout(settle, 700);
-      /* Going back from the first card: teleport to the clone set first, then
-         animate backwards out of it. */
       if (dir < 0 && index === 0) jumpTo(count);
       index += dir;
       apply();
@@ -197,11 +192,43 @@
     prev.addEventListener('click', function () { go(-1); });
     next.addEventListener('click', function () { go(1); });
 
-    /* Swipe / drag */
+    track.style.touchAction = 'pan-y';
+
+    track.addEventListener('touchstart', function (e) {
+      if (animating) return;
+      dragging = true;
+      dragStartX = e.touches[0].clientX;
+      dragCurrentX = dragStartX;
+      dragStartOffset = -index * step();
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    track.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      dragCurrentX = e.touches[0].clientX;
+      var dx = dragCurrentX - dragStartX;
+      track.style.transform = 'translateX(' + (dragStartOffset + dx) + 'px)';
+    }, { passive: true });
+
+    track.addEventListener('touchend', function () {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      var dx = dragCurrentX - dragStartX;
+      if (Math.abs(dx) > 40) {
+        go(dx < 0 ? 1 : -1);
+      } else {
+        apply();
+      }
+    });
+
     var startX = null;
-    track.addEventListener('pointerdown', function (e) { startX = e.clientX; });
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch') return;
+      startX = e.clientX;
+    });
     window.addEventListener('pointerup', function (e) {
-      if (startX === null) return;
+      if (startX === null || e.pointerType === 'touch') return;
       var dx = e.clientX - startX;
       startX = null;
       if (Math.abs(dx) < 45) return;
@@ -241,6 +268,53 @@
         : 'Please enter a valid email address.';
 
       if (ok) input.value = '';
+    });
+  }
+
+  /* -------------------------------------------------------- whatsapp float */
+  var waBtn   = $('#waBtn');
+  var waPopup = $('#waPopup');
+
+  if (waBtn && waPopup) {
+    waBtn.addEventListener('click', function () {
+      var open = waPopup.classList.toggle('is-open');
+      waBtn.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function (e) {
+      var waFloat = $('#waFloat');
+      if (waFloat && !waFloat.contains(e.target)) {
+        waPopup.classList.remove('is-open');
+        waBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* --------------------------------------------------------- branch modal */
+  var branchModal = $('#branchModal');
+
+  if (branchModal) {
+    var openModal = function () {
+      branchModal.classList.add('is-open');
+      branchModal.setAttribute('aria-hidden', 'false');
+    };
+    var closeModal = function () {
+      branchModal.classList.remove('is-open');
+      branchModal.setAttribute('aria-hidden', 'true');
+    };
+
+    $$('.js-branch-call').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    var modalClose = $('.branch-modal__x', branchModal);
+    var modalBackdrop = $('#branchModalClose');
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && branchModal.classList.contains('is-open')) closeModal();
     });
   }
 

@@ -279,7 +279,7 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Help getting started safely</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ask us about student timings</li>
         </ul>
-        <a href="tel:+919859595969" class="btn btn--line plan__cta">Call Now</a>
+        <button class="btn btn--line plan__cta js-branch-call">Call Now</button>
       </article>
 
       <article class="plan plan--featured">
@@ -297,7 +297,7 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Train at your own schedule</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Open to men and women alike</li>
         </ul>
-        <a href="tel:+919859595969" class="btn btn--yellow plan__cta">Call Now</a>
+        <button class="btn btn--yellow plan__cta js-branch-call">Call Now</button>
       </article>
 
       <article class="plan">
@@ -314,7 +314,7 @@
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Use either branch, any day</li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ask about family rates</li>
         </ul>
-        <a href="tel:+919859595969" class="btn btn--line plan__cta">Call Now</a>
+        <button class="btn btn--line plan__cta js-branch-call">Call Now</button>
       </article>
 
     </div>
@@ -347,7 +347,7 @@
     <div class="promo__card">
       <h2>Fitness training<br />this Summer</h2>
       <p class="promo__deal">Get 15% Discount</p>
-      <a href="tel:+919859595969" class="btn btn--red">Register Now</a>
+      <button class="btn btn--red js-branch-call">Register Now</button>
     </div>
   </div>
 </section>
@@ -460,6 +460,10 @@
             Tajpur Road, Backside Dashmesh Dairy<br />
             Karam Colony, Ludhiana, Punjab 141008
           </address>
+          <p class="loc__hours">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.3 1.9"/></svg>
+            Open daily &middot; 6:00 am &ndash; 10:00 pm
+          </p>
           <p class="loc__meta">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
             <a href="tel:+919859595969">+91 98595 95969</a>
@@ -485,6 +489,10 @@
             Gill Road<br />
             Ludhiana, Punjab
           </address>
+          <p class="loc__hours">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.3 1.9"/></svg>
+            Open daily &middot; 6:00 am &ndash; 10:00 pm
+          </p>
           <p class="loc__meta">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
             <a href="tel:+919878000122">+91 98780 00122</a>
@@ -536,6 +544,7 @@
           Gill Road, Ludhiana, Punjab<br />
           <a href="tel:+919878000122">+91 98780 00122</a>
         </address>
+        <p class="footer__hours">Both branches open daily, 6:00 am &ndash; 10:00 pm</p>
       </div>
 
       <nav class="footer__col" aria-label="Company">
@@ -565,6 +574,47 @@
     </div>
   </div>
 </footer>
+
+<!-- WhatsApp floating button -->
+<div class="wa-float" id="waFloat">
+  <button class="wa-float__btn" id="waBtn" aria-label="Chat on WhatsApp" aria-expanded="false">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.88A13.12 13.12 0 0 0 4.46 22.1L2.88 29.12l7.2-1.56A13.12 13.12 0 1 0 16 2.88zm0 24.06a10.9 10.9 0 0 1-5.58-1.52l-.4-.24-4.14.9.92-4.06-.26-.42A10.94 10.94 0 1 1 16 26.94zm6-8.16c-.33-.16-1.95-.96-2.25-1.07s-.52-.16-.74.17-.85 1.07-1.04 1.29-.39.25-.72.08a9.07 9.07 0 0 1-2.67-1.65 10 10 0 0 1-1.85-2.3c-.19-.33 0-.51.15-.67s.33-.39.5-.58a2.28 2.28 0 0 0 .33-.56.62.62 0 0 0-.03-.58c-.08-.17-.74-1.78-1.01-2.44s-.53-.55-.74-.56h-.63a1.22 1.22 0 0 0-.88.41A3.7 3.7 0 0 0 9.7 13.6a6.43 6.43 0 0 0 1.35 3.42 14.73 14.73 0 0 0 5.64 4.99c.79.34 1.4.54 1.88.7a4.54 4.54 0 0 0 2.08.13 3.4 3.4 0 0 0 2.23-1.57 2.76 2.76 0 0 0 .19-1.57c-.08-.14-.3-.22-.63-.39z" fill="currentColor"/></svg>
+  </button>
+  <div class="wa-float__popup" id="waPopup">
+    <p class="wa-float__title">Chat on WhatsApp</p>
+    <a href="https://wa.me/919859595969" target="_blank" rel="noopener" class="wa-float__branch">
+      <strong>Samrala Chowk</strong>
+      <span>+91 98595 95969</span>
+    </a>
+    <a href="https://wa.me/919878000122" target="_blank" rel="noopener" class="wa-float__branch">
+      <strong>Gill Road</strong>
+      <span>+91 98780 00122</span>
+    </a>
+  </div>
+</div>
+
+<!-- Branch selector modal (membership / promo CTAs) -->
+<div class="branch-modal" id="branchModal" aria-hidden="true">
+  <div class="branch-modal__backdrop" id="branchModalClose"></div>
+  <div class="branch-modal__card">
+    <button class="branch-modal__x" aria-label="Close">&times;</button>
+    <h3>Select a branch to call</h3>
+    <a href="tel:+919859595969" class="branch-modal__opt">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+      <div>
+        <strong>Samrala Chowk</strong>
+        <span>+91 98595 95969</span>
+      </div>
+    </a>
+    <a href="tel:+919878000122" class="branch-modal__opt">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+      <div>
+        <strong>Gill Road</strong>
+        <span>+91 98780 00122</span>
+      </div>
+    </a>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
