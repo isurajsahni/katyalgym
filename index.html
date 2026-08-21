@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Katyal Fitness Gym — Build Strength. Build Confidence.</title>
+<meta name="description" content="Katyal Fitness Gym — more than a gym, a place to transform. Personal training, strength, cardio and conditioning." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============================ NAVBAR ============================ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="#hero" aria-label="Katyal Fitness Gym home">
+      <img src="images/logo.png" alt="Katyal Fitness Gym" width="268" height="92" />
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#hero" class="is-active">Home</a>
+      <a href="#solutions">Services</a>
+      <a href="#membership">Membership</a>
+      <a href="#about">About Us</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+    <a href="#promo" class="btn btn--yellow btn--sm nav__cta">Join Us Now</a>
+
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="hero">
+  <!-- Background layer: the video is a direct child of the section and pinned to
+       its edges, so it covers the full bleed regardless of the section's own
+       padding. Muted is required for autoplay; the poster is the original Figma
+       hero still, shown before the first frame decodes, on failure, and when the
+       visitor prefers reduced motion. -->
+  <video class="hero__video" id="heroVideo" autoplay muted loop playsinline
+         preload="auto" poster="images/hero-bg.jpg" aria-hidden="true" tabindex="-1">
+    <source src="video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero__scrim"></div>
+
+  <div class="container hero__content">
+    <h1 class="hero__title">
+      <span class="tx-yellow">Build Strength.</span> Build Confidence.<br />
+      Build Your Best Self.
+    </h1>
+    <p class="hero__sub">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
+    </p>
+    <div class="hero__actions">
+      <a href="#solutions" class="btn btn--red">Explore More</a>
+      <a href="#membership" class="btn btn--ghost">Join Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= ABOUT ============================ -->
+<section class="section about" id="about">
+  <span class="stripe stripe--br"></span>
+
+  <div class="container">
+    <div class="head head--center">
+      <p class="eyebrow">About Us</p>
+      <h2 class="h2">More Than A Gym, A<br />Place To Transform.</h2>
+    </div>
+
+    <div class="about__grid">
+      <figure class="about__img about__img--l img-ph">
+        <img src="images/about-left.png" alt="Members training on the gym floor" />
+      </figure>
+
+      <div class="about__copy">
+        <p class="mini-label">
+          <img src="images/badge-tc99.png" alt="" />
+          Personal Trainers
+        </p>
+        <p class="mini-sub">Group Classes</p>
+
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type.
+        </p>
+        <p>
+          It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged. It was popularised in the 1960s
+          with the release of Letraset sheets containing Lorem Ipsum passages.
+        </p>
+
+        <a href="#gallery" class="link-y">Discover our unique moments</a>
+      </div>
+
+      <figure class="about__img about__img--r img-ph">
+        <img src="images/about-right.png" alt="Athlete lifting weights" />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SOLUTIONS ========================== -->
+<section class="section solutions" id="solutions">
+  <span class="stripe stripe--bl"></span>
+
+  <div class="container">
+    <div class="head head--split">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 class="h2">Our Fitness Solution<br />For Strong Body</h2>
+      </div>
+      <div class="head__aside">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry standard dummy text ever since the 1500s.
+        </p>
+        <a href="#promo" class="link-y">Explore More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel__track" id="carouselTrack">
+      <article class="scard img-ph">
+        <img src="images/service-personal-training.png" alt="" />
+        <div class="scard__body">
+          <h3>Personal Training</h3>
+          <p>One-on-one coaching built around your goals, your schedule and your pace.</p>
+        </div>
+      </article>
+      <article class="scard img-ph">
+        <img src="images/service-strength-training.png" alt="" />
+        <div class="scard__body">
+          <h3>Strength Training</h3>
+          <p>Progressive overload programming to build real, lasting muscle and power.</p>
+        </div>
+      </article>
+      <article class="scard img-ph">
+        <img src="images/service-cardio.png" alt="" />
+        <div class="scard__body">
+          <h3>Cardio &amp; Conditioning</h3>
+          <p>Sessions that lift your endurance, burn fat and keep your heart strong.</p>
+        </div>
+      </article>
+      <article class="scard img-ph">
+        <img src="images/service-weight-training.png" alt="" />
+        <div class="scard__body">
+          <h3>Group Classes</h3>
+          <p>High-energy group workouts that keep motivation and consistency high.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="container carousel__nav">
+      <button class="round" id="prevBtn" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="round" id="nextBtn" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FEATURES ========================== -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="head head--split">
+      <div>
+        <p class="eyebrow">Why Choose Us</p>
+        <h2 class="h2">Lorem Ipsum Is<br />Simply Dummy Text</h2>
+      </div>
+      <div class="head__aside">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type.
+        </p>
+      </div>
+    </div>
+
+    <div class="features__grid">
+      <div class="features__col">
+        <article class="fcard">
+          <span class="fcard__icon">
+            <img src="images/badge-tc99.png" alt="" />
+          </span>
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+        <article class="fcard">
+          <span class="fcard__icon">
+            <img src="images/badge-tc99.png" alt="" />
+          </span>
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+
+      <figure class="features__hero img-ph">
+        <img src="images/features-athletes.png" alt="Two athletes standing together" />
+      </figure>
+
+      <div class="features__col">
+        <article class="fcard">
+          <span class="fcard__icon">
+            <img src="images/badge-tc99.png" alt="" />
+          </span>
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+        <article class="fcard">
+          <span class="fcard__icon">
+            <img src="images/badge-tc99.png" alt="" />
+          </span>
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </article>
+      </div>
+
+      <article class="fcard fcard--wide">
+        <span class="fcard__icon">
+          <img src="images/badge-tc99.png" alt="" />
+        </span>
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== MEMBERSHIP ========================= -->
+<section class="section plans" id="membership">
+  <span class="stripe stripe--tr"></span>
+
+  <div class="container">
+    <div class="head head--center">
+      <p class="eyebrow">Membership</p>
+      <h2 class="h2">Choose The Plan<br />That Fits You</h2>
+    </div>
+
+    <div class="plans__grid">
+
+      <article class="plan">
+        <h3 class="plan__name">Basic</h3>
+        <p class="plan__desc">Everything you need to train on your own terms.</p>
+        <p class="plan__price">
+          <span class="plan__cur">&#8377;</span>1,499<span class="plan__per">/month</span>
+        </p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Full gym floor access</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Locker &amp; shower facilities</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>One fitness assessment</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Off-peak hours, 6am&ndash;4pm</li>
+        </ul>
+        <a href="#footer" class="btn btn--line plan__cta">Get Started</a>
+      </article>
+
+      <article class="plan plan--featured">
+        <span class="plan__badge">Most Popular</span>
+        <h3 class="plan__name">Pro</h3>
+        <p class="plan__desc">Training, classes and guidance in one plan.</p>
+        <p class="plan__price">
+          <span class="plan__cur">&#8377;</span>2,499<span class="plan__per">/month</span>
+        </p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Basic</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited group classes</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>2 personal training sessions</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Diet &amp; nutrition plan</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 gym access</li>
+        </ul>
+        <a href="#footer" class="btn btn--yellow plan__cta">Get Started</a>
+      </article>
+
+      <article class="plan">
+        <h3 class="plan__name">Elite</h3>
+        <p class="plan__desc">Full support for serious, measurable results.</p>
+        <p class="plan__price">
+          <span class="plan__cur">&#8377;</span>3,999<span class="plan__per">/month</span>
+        </p>
+        <ul class="plan__list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Pro</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited personal training</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom strength programming</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Recovery &amp; massage room</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>2 guest passes each month</li>
+        </ul>
+        <a href="#footer" class="btn btn--line plan__cta">Get Started</a>
+      </article>
+
+    </div>
+
+    <p class="plans__note">
+      All plans include a free trial session and come with no joining fee.
+      Cancel or switch your plan at any time.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= PROMO ============================ -->
+<section class="promo" id="promo">
+  <span class="stripe stripe--tl"></span>
+  <span class="stripe stripe--bl"></span>
+
+  <div class="promo__bg img-ph">
+    <img src="images/promo-bg.png" alt="" />
+  </div>
+  <div class="promo__scrim"></div>
+
+  <div class="container">
+    <div class="promo__card">
+      <h2>Fitness training<br />this Summer</h2>
+      <p class="promo__deal">Get 15% Discount</p>
+      <a href="#footer" class="btn btn--red">Register Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GALLERY =========================== -->
+<section class="section gallery" id="gallery">
+  <span class="watermark" aria-hidden="true">GYM</span>
+
+  <div class="container">
+    <div class="head head--split">
+      <div>
+        <p class="eyebrow">Gallery</p>
+        <h2 class="h2">Lorem Ipsum Is<br />Simply Dummy Text</h2>
+      </div>
+      <div class="head__aside">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry standard dummy text ever since the 1500s.
+        </p>
+        <a href="#footer" class="link-y">View All</a>
+      </div>
+    </div>
+
+    <div class="gallery__grid">
+      <figure class="gallery__big img-ph">
+        <img src="images/gallery-1.png" alt="Group workout session" />
+      </figure>
+
+      <figure class="gallery__big gallery__big--offset img-ph">
+        <img src="images/gallery-2.png" alt="Members using gym equipment" />
+      </figure>
+
+      <div class="gallery__thumbs">
+        <figure class="img-ph"><img src="images/gallery-thumb-1.png" alt="" /></figure>
+        <figure class="img-ph"><img src="images/gallery-thumb-2.png" alt="" /></figure>
+        <figure class="img-ph"><img src="images/gallery-thumb-3.png" alt="" /></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REVIEWS =========================== -->
+<section class="section reviews" id="reviews">
+  <span class="stripe stripe--tr"></span>
+
+  <div class="container">
+    <h2 class="h2 h2--center reviews__title">Past Reviews</h2>
+
+    <div class="reviews__grid" id="reviewsGrid">
+      <article class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.</p>
+        <div class="rcard__who">
+          <span class="avatar img-ph"><img src="images/avatar-1.jpg" alt="" /></span>
+          <span class="rcard__name">Amit Kumar</span>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.</p>
+        <div class="rcard__who">
+          <span class="avatar img-ph"><img src="images/avatar-2.jpg" alt="" /></span>
+          <span class="rcard__name">Neha Sharma</span>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.</p>
+        <div class="rcard__who">
+          <span class="avatar img-ph"><img src="images/avatar-3.jpg" alt="" /></span>
+          <span class="rcard__name">Rahul Verma</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="dots" id="reviewDots">
+      <button class="is-active" aria-label="Reviews page 1"></button>
+      <button aria-label="Reviews page 2"></button>
+      <button aria-label="Reviews page 3"></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER =========================== -->
+<footer class="footer" id="footer">
+  <span class="stripe stripe--tl"></span>
+  <img class="watermark watermark--footer" src="images/logo.png" alt="" aria-hidden="true" />
+
+  <div class="container">
+    <div class="news">
+      <div class="news__copy">
+        <h3>Join Our Newsletter</h3>
+        <p>Get training tips, offers and class updates straight to your inbox.</p>
+      </div>
+      <form class="news__form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Your email address" aria-label="Your email address" required />
+        <button type="submit" class="btn btn--yellow btn--sm">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--lg" href="#hero" aria-label="Katyal Fitness Gym home">
+          <img src="images/logo.png" alt="Katyal Fitness Gym" width="268" height="92" />
+        </a>
+        <address>
+          Katyal Fitness Gym<br />
+          Main Market Road<br />
+          New Delhi, 110001
+        </address>
+        <address>
+          <a href="tel:+919000000000">+91 90000 00000</a><br />
+          <a href="mailto:hello@katyalgym.com">hello@katyalgym.com</a>
+        </address>
+      </div>
+
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#solutions">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <nav class="footer__col footer__col--social" aria-label="Follow us">
+        <h4>Follow Us</h4>
+        <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.3 0-1.3-.13-2.45-.13-2.42 0-4.05 1.48-4.05 4.19v2.24H7.8V14h2.7v8z" fill="currentColor"/></svg>Facebook</a>
+        <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4A4.6 4.6 0 1 0 16.6 12 4.6 4.6 0 0 0 12 7.4zm0 7.6A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm5.9-7.8a1.07 1.07 0 1 1-1.07-1.07A1.07 1.07 0 0 1 17.9 7.2zM21 8.3a5.3 5.3 0 0 0-1.45-3.76A5.34 5.34 0 0 0 15.8 3.1c-1.48-.08-5.92-.08-7.4 0A5.33 5.33 0 0 0 4.64 4.53 5.32 5.32 0 0 0 3.2 8.29c-.08 1.48-.08 5.92 0 7.4a5.3 5.3 0 0 0 1.44 3.76 5.35 5.35 0 0 0 3.76 1.45c1.48.08 5.92.08 7.4 0a5.3 5.3 0 0 0 3.75-1.45A5.34 5.34 0 0 0 21 15.69c.08-1.48.08-5.91 0-7.39zm-1.9 8.98a3 3 0 0 1-1.71 1.71c-1.19.47-4 .36-5.31.36s-4.13.1-5.31-.36a3 3 0 0 1-1.71-1.71c-.47-1.19-.36-4-.36-5.31s-.1-4.13.36-5.31A3 3 0 0 1 6.77 4.95c1.19-.47 4-.36 5.31-.36s4.13-.1 5.31.36a3 3 0 0 1 1.71 1.71c.47 1.19.36 4 .36 5.31s.11 4.12-.36 5.31z" fill="currentColor"/></svg>Instagram</a>
+        <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.9c-.7.32-1.5.53-2.3.63a4 4 0 0 0 1.76-2.21 8 8 0 0 1-2.54.97 4 4 0 0 0-6.81 3.64A11.3 11.3 0 0 1 3.9 4.75a4 4 0 0 0 1.24 5.33 4 4 0 0 1-1.81-.5v.05a4 4 0 0 0 3.2 3.92 4 4 0 0 1-1.8.07 4 4 0 0 0 3.73 2.78A8 8 0 0 1 2 18.06a11.3 11.3 0 0 0 6.1 1.79c7.35 0 11.37-6.08 11.37-11.35v-.52A8 8 0 0 0 22 5.9z" fill="currentColor"/></svg>Twitter</a>
+        <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5A1.94 1.94 0 1 1 5 3.06 1.94 1.94 0 0 1 6.94 5zM7 8.48H3V21h4zM13.32 8.48H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z" fill="currentColor"/></svg>LinkedIn</a>
+        <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.02V8.98L15.2 12z" fill="currentColor"/></svg>YouTube</a>
+      </nav>
+    </div>
+
+    <div class="footer__bar">
+      <p>&copy; <span id="year">2026</span> Katyal Fitness Gym. All rights reserved.</p>
+      <nav aria-label="Legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Sitemap</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
