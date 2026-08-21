@@ -834,11 +834,10 @@ img.watermark--footer {
 /* -------------------------------- Locations ------------------------------ */
 .locations { background: var(--bg-alt); }
 
-/* auto-fit means a single branch fills the row and a second one splits it in
-   two with no markup change — see the commented template in index.html. */
+/* Two branches side by side, one row. Collapses to a single column at 900px. */
 .locations__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 
@@ -970,7 +969,19 @@ img.watermark--footer {
   color: var(--muted);
   font-size: 14px;
   font-weight: 300;
+  line-height: 1.65;
   margin-bottom: 16px;
+}
+/* Branch name heading each footer address block. */
+.footer__brand address strong {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 .footer__brand address a:hover { color: var(--yellow); }
 
@@ -1077,6 +1088,8 @@ img.watermark--footer {
 
   .plans__grid { grid-template-columns: 1fr; gap: 30px; max-width: 440px; margin-inline: auto; }
   .plan__desc { min-height: 0; }
+
+  .locations__grid { grid-template-columns: 1fr; gap: 26px; max-width: 520px; margin-inline: auto; }
 
   .gallery__grid { grid-template-columns: 1fr; }
   .gallery__big--offset { grid-column: 1; grid-row: auto; margin-top: 0; }

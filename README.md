@@ -153,16 +153,23 @@ a figure) with no backdrop, and `badge-tc99.png` sits directly on the card.
 ## Locations
 
 A "Where To Train" section sits between the reviews and the footer, with the
-navbar's Contact link pointing at it. Each branch is a card carrying an embedded
-Google map, the address, the branch phone, and Get Directions / Call buttons.
+navbar's Contact link pointing at it. Both branches are shown side by side in a
+2×1 grid, each a card carrying an embedded Google map, the address, the branch
+phone, and Get Directions / Call buttons. The footer repeats both addresses.
 
-**Only one branch is live.** No second Katyal Fitness Gym location appears on any
-public listing, so rather than guess an address the second card sits commented
-out in `index.html` as a filled-in template. To enable it, uncomment the block and
-replace the branch name, address lines, phone number (in both links) and the two
-map queries. Nothing else needs touching — the grid uses
-`repeat(auto-fit, minmax(min(100%, 380px), 1fr))`, so it splits from one
-full-width card into two columns on its own.
+| Branch | Address | Phone |
+| --- | --- | --- |
+| Samrala Chowk | Tajpur Road, Backside Dashmesh Dairy, Karam Colony, Ludhiana 141008 | +91 98595 95969 |
+| Gill Road | Gill Road, Ludhiana, Punjab | +91 98780 00122 |
+
+The Samrala Chowk details came from the Google listing. The Gill Road branch is
+not on any public listing — those details were supplied directly, though the
+phone number does match one that appears in the gym's own Facebook posts. Two
+things are still worth filling in when known: **the Gill Road street address is
+only as precise as "Gill Road"** (no landmark or PIN), which is all the map query
+has to work with, so the pin lands on the road rather than the door.
+
+The grid is `repeat(2, 1fr)`, collapsing to one column under 900px.
 
 The maps are plain `maps.google.com/maps?q=…&output=embed` iframes, which need no
 API key and no billing account. The address goes in as a readable query string,
