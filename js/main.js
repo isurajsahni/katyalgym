@@ -131,32 +131,71 @@
   var next  = $('#nextBtn');
 
   if (track && prev && next) {
+    var originals = $$('.scard', track);
+    var count = originals.length;
+
+    /* The set is cloned once and appended, so the track can always keep moving
+       forward. Landing on the first clone is visually identical to landing on
+       the real first card, which is what makes the wrap invisible: we snap the
+       track back with the transition switched off and nobody sees the seam. */
+    if (count > 1) {
+      originals.forEach(function (card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');   /* duplicates, not content */
+        clone.classList.add('is-clone');
+        track.appendChild(clone);
+      });
+    }
+
     var cards = $$('.scard', track);
     var index = 0;
+    var animating = false;
+    var releaseTimer;
 
     var step = function () {
       if (cards.length < 2) return cards.length ? cards[0].offsetWidth : 0;
       return cards[1].offsetLeft - cards[0].offsetLeft;
     };
 
-    /* How many cards fit in the viewport — the last page should sit flush. */
-    var maxIndex = function () {
-      var s = step();
-      if (!s) return 0;
-      var visible = Math.max(1, Math.floor(window.innerWidth / s));
-      return Math.max(0, cards.length - visible);
-    };
-
-    var render = function () {
-      index = Math.min(index, maxIndex());
-      index = Math.max(0, index);
+    var apply = function () {
       track.style.transform = 'translateX(' + (-index * step()) + 'px)';
-      prev.disabled = index <= 0;
-      next.disabled = index >= maxIndex();
     };
 
-    prev.addEventListener('click', function () { index--; render(); });
-    next.addEventListener('click', function () { index++; render(); });
+    /* Reposition with the transition suppressed, so the wrap is not visible. */
+    var jumpTo = function (i) {
+      track.style.transition = 'none';
+      index = i;
+      apply();
+      void track.offsetWidth;            /* force reflow before restoring */
+      track.style.transition = '';
+    };
+
+    /* Runs when a slide finishes — also on a timer, so a transitionend that
+       never fires (reduced motion, a backgrounded tab) cannot wedge it. */
+    var settle = function () {
+      clearTimeout(releaseTimer);
+      animating = false;
+      if (index >= count) jumpTo(index - count);
+      else if (index < 0) jumpTo(index + count);
+    };
+
+    var go = function (dir) {
+      if (animating || count < 2) return;
+      animating = true;
+      releaseTimer = setTimeout(settle, 700);
+      /* Going back from the first card: teleport to the clone set first, then
+         animate backwards out of it. */
+      if (dir < 0 && index === 0) jumpTo(count);
+      index += dir;
+      apply();
+    };
+
+    track.addEventListener('transitionend', function (e) {
+      if (e.propertyName === 'transform') settle();
+    });
+
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
 
     /* Swipe / drag */
     var startX = null;
@@ -166,18 +205,17 @@
       var dx = e.clientX - startX;
       startX = null;
       if (Math.abs(dx) < 45) return;
-      index += dx < 0 ? 1 : -1;
-      render();
+      go(dx < 0 ? 1 : -1);
     });
 
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(render, 120);
+      resizeTimer = setTimeout(function () { jumpTo(index % count); }, 120);
     });
 
-    window.addEventListener('load', render);
-    render();
+    window.addEventListener('load', apply);
+    apply();
   }
 
   /* Reviews are shown as an aggregate Google rating in the markup; there is no

@@ -326,6 +326,9 @@ img.watermark--footer {
 .nav__links a:hover::after,
 .nav__links a.is-active::after { width: 100%; }
 
+/* Only ever visible inside the open burger menu — see the 980px query. */
+.nav__cta-mobile { display: none; }
+
 .nav__burger {
   display: none;
   width: 42px; height: 38px;
@@ -445,7 +448,8 @@ img.watermark--footer {
 /* ------------------------------- Solutions ------------------------------- */
 .solutions { background: var(--bg); padding-bottom: 120px; }
 
-.carousel { position: relative; margin-top: 8px; }
+/* Clips the cloned loop set rather than relying on body { overflow-x: hidden }. */
+.carousel { position: relative; margin-top: 8px; overflow: hidden; }
 
 .carousel__track {
   display: flex;
@@ -1050,9 +1054,10 @@ img.watermark--footer {
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 900px) {
-  .section { padding: 84px 0; }
-
+/* The inline links need roughly 795px once the logo and CTA are counted, so the
+   navbar collapses on its own breakpoint — earlier than the layout grids below,
+   which still have room at that size. */
+@media (max-width: 980px) {
   .nav__inner { padding-right: 8px; }
   .nav__burger { display: block; }
   .nav__cta { display: none; }
@@ -1081,6 +1086,27 @@ img.watermark--footer {
   .nav__links a { padding: 13px 14px; border-radius: 6px; }
   .nav__links a::after { display: none; }
   .nav__links a:hover { background: rgba(255, 255, 255, .05); }
+
+  /* Styled directly rather than with .btn, which would lose to `.nav__links a`
+     on specificity. */
+  .nav__links a.nav__cta-mobile {
+    display: inline-flex;
+    justify-content: center;
+    margin: 8px 6px 4px;
+    padding: 13px 20px;
+    border-radius: var(--radius);
+    background: var(--yellow);
+    color: #14141c;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .nav__links a.nav__cta-mobile:hover { background: var(--white); color: #14141c; }
+}
+
+@media (max-width: 900px) {
+  .section { padding: 84px 0; }
 
   .head--split { grid-template-columns: 1fr; align-items: start; gap: 22px; }
 

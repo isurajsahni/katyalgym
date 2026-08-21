@@ -4,8 +4,8 @@ A static recreation of the **Katyal gym** Figma design: dark theme, yellow + red
 accents, angled stripe dividers, nine sections from navbar to footer, with a
 looping video hero.
 
-All photography, the logo, the badge icon, and the colour palette are the **real
-assets pulled out of the Figma file** — not placeholders.
+All photography, the logo, and the colour palette are the **real assets pulled out
+of the Figma file** — not placeholders.
 
 ## Run it
 
@@ -121,7 +121,6 @@ Editing `--yellow` or `--red` re-skins the site.
 | File | Used for |
 | --- | --- |
 | `logo.png` | The real logo (transparent PNG, 268×92) — navbar + footer |
-| `badge-tc99.png` | Transparent badge icon — feature cards + about label |
 | `hero-bg.jpg` | Hero video poster / fallback still |
 | `about-left.png`, `about-right.png` | About section pair |
 | `service-*.png` (×4) | Services carousel |
@@ -134,16 +133,32 @@ Editing `--yellow` or `--red` re-skins the site.
 The carousel has exactly four cards because the file contains exactly four
 service images.
 
-Two assets carry transparency and are handled accordingly:
-`features-athletes.png` uses `object-fit: contain` (not `cover`, which would crop
-a figure) with no backdrop, and `badge-tc99.png` sits directly on the card.
+`features-athletes.png` is a transparent cut-out, so it uses `object-fit: contain`
+(not `cover`, which would crop a figure) with no backdrop behind it.
+
+One asset that came out of the Figma file was **removed**: `badge-tc99.png`, a
+"TC 99" shield that is another gym's logo — most likely left over from whatever
+template the design started from. It had been used as the icon on the five
+feature cards and the about-section label. Those now use plain inline SVG icons,
+one per card, in the brand yellow. If you ever see that shield reappear, it is
+not yours.
 
 ## What is interactive
 
 - **Navbar** — floats over the hero, solidifies on scroll, highlights the section
-  you are in; collapses to a burger menu under 900px.
-- **Services carousel** — arrows plus drag/swipe, clamps at both ends,
-  recalculates how many cards fit on resize.
+  you are in. It collapses to a burger at **980px**, on its own media query rather
+  than sharing the 900px layout breakpoint: the inline links need about 795px once
+  the logo and CTA are counted, while the section grids still have room at that
+  width. The open menu carries its own copy of the "Join Us Now" button, because
+  the bar's CTA is hidden in the collapsed layout and the primary action would
+  otherwise disappear on mobile entirely.
+- **Services carousel** — an endless loop in both directions, driven by arrows or
+  drag/swipe. The card set is cloned once and appended; when a slide lands on the
+  first clone the track snaps back to the real first card with the transition
+  switched off, which is invisible because both positions show the same card. The
+  arrows are never disabled. Clones are `aria-hidden`, so screen readers hear the
+  services once. A fallback timer covers a `transitionend` that never fires (a
+  backgrounded tab, or reduced motion) so the slider cannot wedge.
 - **Reviews** — the three dots page through three sets of testimonials
   (`reviewPages` in `js/main.js`).
 - **Newsletter** — inline email validation.

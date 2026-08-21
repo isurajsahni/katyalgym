@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Katyal Fitness Gym — Unisex Gym in Ludhiana, Punjab</title>
-<meta name="description" content="Katyal Fitness Gym is a unisex gym at Samrala Chowk, Ludhiana, with strength and cardio floors and memberships for teens, individuals and families. Rated 4.4 on Google." />
+<meta name="description" content="Katyal Fitness Gym is a unisex gym with two branches in Ludhiana — Samrala Chowk and Gill Road. Strength, cardio and body spa, with memberships for teens, individuals and families. Rated 4.4 on Google." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -25,6 +25,9 @@
       <a href="#membership">Membership</a>
       <a href="#about">About Us</a>
       <a href="#locations">Contact</a>
+      <!-- The bar's CTA is hidden in the burger layout, so the menu carries its
+           own copy — otherwise the primary action vanishes on mobile. -->
+      <a href="#membership" class="nav__cta-mobile">Join Us Now</a>
     </nav>
 
     <a href="#promo" class="btn btn--yellow btn--sm nav__cta">Join Us Now</a>
@@ -56,9 +59,9 @@
       Build Your Best Self.
     </h1>
     <p class="hero__sub">
-      A unisex gym at Samrala Chowk, Ludhiana, with strength and cardio floors and
-      memberships built for teens, individuals and families. Rated 4.4 on Google
-      by our members.
+      Two unisex branches in Ludhiana — Samrala Chowk and Gill Road. Strength,
+      cardio and body spa, with memberships built for teens, individuals and
+      families. Rated 4.4 on Google by our members.
     </p>
     <div class="hero__actions">
       <a href="#solutions" class="btn btn--red">Explore More</a>
@@ -84,15 +87,16 @@
 
       <div class="about__copy">
         <p class="mini-label">
-          <img src="images/badge-tc99.png" alt="" />
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M9 12h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
           Unisex Gym
         </p>
-        <p class="mini-sub">Samrala Chowk, Ludhiana</p>
+        <p class="mini-sub">Samrala Chowk &amp; Gill Road, Ludhiana</p>
 
         <p>
-          Katyal Fitness Gym is a unisex gym on Tajpur Road, just behind Dashmesh
-          Dairy at Samrala Chowk. Men and women train on the same floor, with space
-          for free weights, machines and cardio all under one roof.
+          Katyal Fitness Gym runs two unisex branches in Ludhiana — one on Tajpur
+          Road behind Dashmesh Dairy at Samrala Chowk, the other on Gill Road. Men
+          and women train on the same floor, with space for free weights, machines
+          and cardio.
         </p>
         <p>
           We keep membership simple, with options for teens starting out, individuals
@@ -160,6 +164,16 @@
           <p>A full dumbbell and machine floor, open to men and women alike.</p>
         </div>
       </article>
+      <!-- The Figma file shipped no spa photo, so this card falls back to the
+           .img-ph gradient. To match the others, save a photo as
+           images/service-spa.jpg and add <img src="images/service-spa.jpg" alt="" />
+           as the first child of this article. -->
+      <article class="scard img-ph">
+        <div class="scard__body">
+          <h3>Body Spa</h3>
+          <p>Wind down and recover after a heavy session. Ask at the desk for what is available.</p>
+        </div>
+      </article>
     </div>
 
     <div class="container carousel__nav">
@@ -194,14 +208,14 @@
       <div class="features__col">
         <article class="fcard">
           <span class="fcard__icon">
-            <img src="images/badge-tc99.png" alt="" />
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M16 4.2a3 3 0 0 1 0 5.6M17 14.2a5 5 0 0 1 4 4.8V21"/></svg>
           </span>
           <h3>Unisex Floor</h3>
           <p>Men and women train together on one open floor, not split into corners.</p>
         </article>
         <article class="fcard">
           <span class="fcard__icon">
-            <img src="images/badge-tc99.png" alt="" />
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 21v-1.5a7 7 0 0 1 14 0V21"/></svg>
           </span>
           <h3>Teen Friendly</h3>
           <p>Dedicated memberships for teenagers getting started with training.</p>
@@ -215,14 +229,14 @@
       <div class="features__col">
         <article class="fcard">
           <span class="fcard__icon">
-            <img src="images/badge-tc99.png" alt="" />
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="2.8"/><circle cx="17" cy="8" r="2.3"/><path d="M3 20v-2a5 5 0 0 1 10 0v2M14 20v-1.6a3.6 3.6 0 0 1 7 0V20"/></svg>
           </span>
           <h3>Family Plans</h3>
           <p>Bring the family in on one membership instead of separate sign-ups.</p>
         </article>
         <article class="fcard">
           <span class="fcard__icon">
-            <img src="images/badge-tc99.png" alt="" />
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </span>
           <h3>Rated 4.4 On Google</h3>
           <p>Thirty-nine members have reviewed us, averaging 4.4 out of 5.</p>
@@ -231,10 +245,10 @@
 
       <article class="fcard fcard--wide">
         <span class="fcard__icon">
-          <img src="images/badge-tc99.png" alt="" />
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
         </span>
-        <h3>Easy To Reach</h3>
-        <p>On Tajpur Road behind Dashmesh Dairy, a short hop from Samrala Chowk in Karam Colony &mdash; easy to fit around work or college.</p>
+        <h3>Two Branches</h3>
+        <p>Samrala Chowk and Gill Road, so there is a floor near enough to fit around work or college. Both run the same unisex setup.</p>
       </article>
     </div>
   </div>
