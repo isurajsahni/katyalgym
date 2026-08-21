@@ -150,6 +150,31 @@ a figure) with no backdrop, and `badge-tc99.png` sits directly on the card.
 - **Reveal on scroll** — via `IntersectionObserver`, disabled under
   `prefers-reduced-motion`.
 
+## Locations
+
+A "Where To Train" section sits between the reviews and the footer, with the
+navbar's Contact link pointing at it. Each branch is a card carrying an embedded
+Google map, the address, the branch phone, and Get Directions / Call buttons.
+
+**Only one branch is live.** No second Katyal Fitness Gym location appears on any
+public listing, so rather than guess an address the second card sits commented
+out in `index.html` as a filled-in template. To enable it, uncomment the block and
+replace the branch name, address lines, phone number (in both links) and the two
+map queries. Nothing else needs touching — the grid uses
+`repeat(auto-fit, minmax(min(100%, 380px), 1fr))`, so it splits from one
+full-width card into two columns on its own.
+
+The maps are plain `maps.google.com/maps?q=…&output=embed` iframes, which need no
+API key and no billing account. The address goes in as a readable query string,
+so editing it for a new branch is a copy-paste. They are `loading="lazy"`, so
+nothing is fetched from Google until a visitor scrolls down.
+
+Two visual notes: `.loc__map` is 16:9 but capped at `max-height: 320px`, since a
+single full-width branch would otherwise render a 670px-tall map. And the iframe
+carries a `filter: invert(90%) hue-rotate(180deg)…`, the usual trick for making
+Google's light-only embed tiles sit in a dark page — delete that one line for the
+stock light map.
+
 ## Business details — sourced, not invented
 
 Copy now reflects the real business. Verified across the Google listing and a

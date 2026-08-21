@@ -210,7 +210,7 @@
   var revealSelectors = [
     '.head', '.about__img', '.about__copy', '.scard', '.fcard',
     '.features__hero', '.promo__card', '.gallery__big', '.gallery__thumbs',
-    '.rcard', '.news', '.footer__grid', '.plan'
+    '.rcard', '.news', '.footer__grid', '.plan', '.loc'
   ].join(',');
 
   var targets = $$(revealSelectors);
