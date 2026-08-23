@@ -527,9 +527,10 @@ img.watermark--footer {
 .features__hero {
   grid-column: 2;
   grid-row: 1;
-  height: 300px;
+  height: 260px;
   background: none;
   align-self: end;
+  margin-bottom: -20px;
 }
 .features__hero img {
   object-fit: contain;
@@ -635,28 +636,6 @@ img.watermark--footer {
   line-height: 1.6;
   margin-bottom: 20px;
   min-height: 44px;
-}
-
-/* Rates are not published, so the price slot carries the phone number instead. */
-.plan__enquire {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: .02em;
-  color: var(--yellow);
-}
-.plan__enquire a { color: inherit; transition: color .25s var(--ease); }
-.plan__enquire a:hover { color: var(--white); }
-.plan__enquire span {
-  display: block;
-  margin-top: 7px;
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 400;
-  letter-spacing: 0;
-  color: var(--muted);
 }
 
 .plan__list {
@@ -773,16 +752,24 @@ img.watermark--footer {
 }
 .gallery__thumbs figure:hover { transform: translateY(-4px); }
 
-/* -------------------------------- Reviews -------------------------------- */
+/* ------------------------------ Testimonials ------------------------------- */
 .reviews { background: var(--bg-alt); }
-.reviews__title { margin-bottom: 52px; }
 
 .reviews__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 44px;
+  gap: 30px;
+  margin-bottom: 40px;
 }
-.rcard { text-align: center; }
+.rcard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  text-align: center;
+  transition: transform .3s var(--ease), border-color .3s var(--ease);
+}
+.rcard:hover { transform: translateY(-4px); border-color: rgba(253, 210, 1, .5); }
 .stars { color: var(--yellow); font-size: 17px; letter-spacing: 4px; margin-bottom: 16px; }
 .rcard p {
   color: var(--muted);
@@ -790,39 +777,27 @@ img.watermark--footer {
   font-weight: 300;
   line-height: 1.75;
   margin-bottom: 22px;
+  font-style: italic;
 }
 .rcard__who { display: flex; align-items: center; justify-content: center; gap: 12px; }
-.avatar {
-  width: 46px;
-  height: 46px;
+.rcard__initial {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  overflow: hidden;
   flex: none;
-  border: 2px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow);
+  color: #14141c;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
 }
 .rcard__name { font-size: 14px; font-weight: 600; letter-spacing: .03em; }
 
-/* Aggregate Google rating, shown in place of invented testimonials. */
-.rating { text-align: center; }
-.rating .stars { font-size: 26px; letter-spacing: 6px; margin: 0 0 14px; }
-.stars__part { opacity: .38; }
-.rating__score {
-  margin: 0 0 4px;
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: .02em;
-}
-.rating__score strong { color: var(--yellow); font-weight: 700; }
-.rating__meta { color: var(--muted); font-size: 14px; font-weight: 300; margin-bottom: 22px; }
-
 .reviews__cta {
-  margin: 34px 0 0;
   text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 300;
 }
 .reviews__cta a { color: var(--yellow); }
 .reviews__cta a:hover { color: var(--white); }
