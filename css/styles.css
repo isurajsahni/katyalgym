@@ -685,19 +685,6 @@ img.watermark--footer {
 /* Pushed to the bottom so CTAs line up across cards of differing length. */
 .plan__cta { margin-top: auto; width: 100%; }
 
-.plans__note {
-  margin: 34px auto 0;
-  max-width: 620px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
-}
-.plans__note strong { color: var(--white); font-weight: 600; }
-.plans__note a { color: var(--yellow); }
-.plans__note a:hover { color: var(--white); }
-
 /* --------------------------------- Promo --------------------------------- */
 .promo {
   position: relative;
