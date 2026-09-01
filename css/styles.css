@@ -578,8 +578,8 @@ img.watermark--footer {
 
 .plans__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -590,7 +590,7 @@ img.watermark--footer {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 34px 30px 30px;
+  padding: 32px 24px 26px;
   transition: transform .3s var(--ease), border-color .3s var(--ease);
 }
 .plan:hover { transform: translateY(-6px); border-color: rgba(253, 210, 1, .5); }
@@ -622,7 +622,7 @@ img.watermark--footer {
 
 .plan__name {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: .04em;
@@ -632,15 +632,17 @@ img.watermark--footer {
 .plan__price {
   margin: 0 0 14px;
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: .02em;
   color: var(--yellow);
 }
 .plan__price span {
+  display: block;
+  margin-top: 6px;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--muted);
   letter-spacing: 0;
@@ -1223,6 +1225,8 @@ img.watermark--footer {
   .fcard--wide { grid-column: 1 / -1; grid-row: 3; margin-top: -20px; }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
+
+  .plans__grid { grid-template-columns: 1fr 1fr; gap: 26px; max-width: 760px; margin-inline: auto; }
 }
 
 /* The inline links need roughly 795px once the logo and CTA are counted, so the
